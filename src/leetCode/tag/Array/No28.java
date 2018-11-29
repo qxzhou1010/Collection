@@ -1,4 +1,4 @@
-package leetCode;
+package leetCode.tag.Array;
 
 public class No28 {
 	public static void main( String[] args) {

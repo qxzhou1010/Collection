@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FindFirstAndLast34 {
-
     public static void main(String[] args) {
         FindFirstAndLast34 test = new FindFirstAndLast34();
         List arrayList = new ArrayList<>();
@@ -67,7 +66,7 @@ public class FindFirstAndLast34 {
         }
 
         if(nums[middle] == target) {
-            if( middle < nums.length - 1 && middle >0){//防止上溢和下溢
+            if( middle < nums.length - 1 && middle >0){
                 int up = middle;
                 while( up <= nums.length - 1)
                 {   if (nums[up] == target) {
@@ -76,11 +75,7 @@ public class FindFirstAndLast34 {
                     up++;
 
 
-              /*  if(nums[middle + 1] == target) {//当有一段连续的值，就不能仅仅只验证两个了
-                    res[0] = middle ;
-                    res[1] = middle+1;
-                    return res;
-                }*/
+
                 }
                 int down = middle;
                 while( down >= 0){
@@ -91,13 +86,10 @@ public class FindFirstAndLast34 {
 
                 }
 
-                 /*if(nums[middle - 1] == target){
-                    res[0] = middle -1;
-                    res[1] = middle;
-                    return res;*/
+
                 return res;
             }
-            //若middle在两个端点，则直接返回
+
             res[0] = middle;
             res[1] = middle;
             return res;

@@ -1,4 +1,4 @@
-package leetCode;
+package leetCode.tag.Array;
 
 public class TsteFor {
 	public static void main(String[] args) {
