@@ -21,9 +21,10 @@ public class CombinationSum {
 	}
 
 	private void backTrack( List<List<Integer>> list, List<Integer> tempList, int[] nums, int remain, int start){
-		if(remain < 0) return;
-		else if ( remain == 0) list.add( new ArrayList<>(tempList));
+		if(remain < 0) return;//边界条件
+		else if ( remain == 0) list.add( new ArrayList<>(tempList));//正确解
 		else{
+			//深度搜索
 			for ( int i = start; i<nums.length; i++){
 				tempList.add(nums[i]);
 				backTrack(list, tempList, nums, remain - nums[i],i );
