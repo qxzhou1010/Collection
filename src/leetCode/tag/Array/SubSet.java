@@ -11,7 +11,7 @@ import java.util.List;
 public class SubSet {
     public static void main(String[] args) {
         SubSet subSet = new SubSet();
-        List<List<Integer>> test = new ArrayList<>();
+        List<List<Integer>> test;
         int[] nums = {1,2,3};
         test = subSet.subsets(nums);
         System.out.println(test);
@@ -37,5 +37,3 @@ public class SubSet {
             }
         }
     }
-
-
