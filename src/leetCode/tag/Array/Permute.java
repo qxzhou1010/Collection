@@ -10,7 +10,7 @@ import java.util.List;
 public class Permute {
     public static void main(String[] args) {
         Permute test = new Permute();
-        int[] nums = {1,2,3};
+        int[] nums = {1,1,2};
         List<List<Integer>> res;
         res = test.permute(nums);
         System.out.println(res);
