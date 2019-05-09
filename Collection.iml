@@ -8,5 +8,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="commons-io-2.6" level="project" />
+    <orderEntry type="library" name="commons-io-2.6-javadoc" level="project" />
+    <orderEntry type="library" name="commons-io-2.6-sources" level="project" />
+    <orderEntry type="library" name="commons-io-2.6-test-sources" level="project" />
+    <orderEntry type="library" name="commons-io-2.6-tests" level="project" />
+    <orderEntry type="library" name="antisamy-1.5.1" level="project" />
+    <orderEntry type="library" name="batik-anim-1.11" level="project" />
+    <orderEntry type="library" name="nekohtml" level="project" />
+    <orderEntry type="library" name="xercesImpl-2.12.0" level="project" />
+    <orderEntry type="library" name="batik" level="project" />
   </component>
 </module>
