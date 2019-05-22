@@ -76,11 +76,54 @@ public class Solution138 {
 
         return node_vec.get(0);
 
+    }
+
+    static Node copyRandomList02(Node head){
+        //建立一个 原链表节点地址到 这个节点在链表中的位置(序号)的map
+        Map<Node, Integer> node_map = new HashMap<>();
+        //建立一个 节点在链表中的位置(序号) 到 节点地址的map
+        //这里的位置直接用数组下标来表示
+        List<Node> node_vec = new ArrayList<>();
+
+        Node ptr = head;    //建立工作指针，用于遍历原链表
+        int i = 0;          //用于记录每个节点的位置
+        while (ptr!=null){
+            //拷贝原链表的每一个节点到node_vec，注意是深拷贝
+            node_vec.add(new Node(ptr.val, ptr.next, ptr.random));
+            //建立从节点地址 到 节点位置的map
+            node_map.put(ptr, i);
+            i++;
+            ptr = ptr.next;
+
+        }//遍历完毕，完成了每个节点的深拷贝，以及两个map的建立
+        //这一点尤其注意，对于尾节点的处理
+        node_vec.add(null);
+        //下面将拷贝每个节点之间的关系
+        ptr = head;
+        i = 0;
+        while (ptr != null){
+            //完成每个节点next域的复制
+            node_vec.get(i).next = node_vec.get(i+1);
+
+            //如果当前链表的random域不为空
+            if (ptr.random != null){
+                //根据ptr.random指向的节点地址获取该节点的位置
+                int id = node_map.get(ptr.random);
+                //根据id在node_vec中查到该id对应的节点地址，完成random的复制
+                node_vec.get(i).random = node_vec.get(id);
+            }
+            i++;
+            ptr = ptr.next;
+        }
 
 
+        return node_vec.get(0);
 
 
 
     }
+
+
+
 
 }

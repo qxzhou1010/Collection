@@ -4,6 +4,7 @@ package LetCode.LinkList;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 public class Solution160 {
 
@@ -32,6 +33,26 @@ public class Solution160 {
 
         }
         return null;
+
+    }
+    static ListNode getIntersectionNode01(ListNode headA, ListNode headB){
+        List<ListNode> temp = new Vector<>();
+        while (headA!=null){
+            temp.add(headA);
+            headA = headA.next;
+        }
+        while (headB!=null){
+            if (temp.contains(headB)){
+                return headB;
+            }
+            headB = headB.next;
+
+        }
+        return null;
+
+
+
+
 
     }
 

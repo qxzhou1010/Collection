@@ -44,6 +44,20 @@ public class ListNode {
     }
 
     /**
+     * 获取链表长度
+     * @param head
+     * @return
+     */
+    public static int getLen(ListNode head){
+        int len = 0;
+        while (head!=null){
+            len++;
+            head = head.next;
+        }
+        return len;
+
+    }
+    /**
      * 遍历链表并打印
      * @param head
      */

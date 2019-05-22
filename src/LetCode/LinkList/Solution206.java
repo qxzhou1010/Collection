@@ -125,6 +125,55 @@ public class Solution206 {
         }
         return result;
     }
+    static ListNode reverseList01(ListNode head){
+        ListNode new_head = null;
+        ListNode next = null;
+        while (head!=null){
+            next = head.next;
+            head.next = new_head;
+            new_head = head;
+            head = next;
+
+        }
+        return new_head;
+
+
+    }
+    static ListNode reverseBetween02(ListNode head, int m, int n){
+        ListNode pre_head = null;
+        ListNode result = head;
+
+        while (head!=null && (--m)!=0){
+            pre_head = head;
+            head = head.next;
+        }
+        int len = n-m+1;
+        ListNode next = null;
+        ListNode new_head = null;
+        ListNode tail = head;
+        while (head!=null && len!=0){
+            next = head.next;
+            head.next = new_head;
+            new_head = head;
+            head = next;
+            len--;
+        }
+        tail.next = head;
+
+        if (pre_head != null){
+            pre_head.next = new_head;
+        }else {
+            result = new_head;
+        }
+        return result;
+
+
+
+
+
+    }
+
+
 
 
 }
